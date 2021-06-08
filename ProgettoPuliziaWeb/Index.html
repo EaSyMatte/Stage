@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="FileJS.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="FileCSS.css">
+    <title>Pulizia condomini</title>
+</head>
+<body>
+
+    <button class="tablink" onclick="openPage('Login', this, 'green')">Login</button>    
+    <button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">Home</button>
+    <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+    <button class="tablink" onclick="openPage('Preventivo', this, 'green')" id="divPreventivo">Preventivo</button>
+
+    <div id="Login" class="tabcontent">   
+        <label>Se si vuole effettuare il login cliccare sul pulsante LOGIN:</label>
+        <button id="btnLogin" onclick="btnLogin()">LOGIN</button>
+        <table id="tableLogin"></table>
+    </div>
+
+    <div id="Home" class="tabcontent">
+        <table id="tbHomePage">
+            <tr><label>Tipo di pulizia che si desidera:</label></tr>
+            <tr><td>Pulizie vetri condominio</td>
+            <td><button onclick="btnOrdine(this)" value="10">+</button></td>
+            <td>Prezzo 10€ al mq</td></tr>
+            <tr><td>Pulizie scale condominio</td>
+            <td><button onclick="btnOrdine(this)" value="15">+</button></td>
+            <td>Prezzo 15€ al mq</td></tr>
+            <tr><td>Pulizie interni condominio</td>
+            <td><button onclick="btnOrdine(this)" value="20">+</button></td>
+            <td>Prezzo 20€ al mq</td></tr>
+            <tr><td>Pulizie complete condominio</td>
+            <td><button onclick="btnOrdine(this)" value="25">+</button></td>
+            <td>Prezzo 25€ al mq</td></tr>
+        
+            <tr><td><label>In che città ti servono le pulizie?</label></td>
+            <td><input type="text" id="txtCitta"></td></tr>
+
+            <tr><td><label>Superficie da pulire circa:</label></td>
+            <td><input type="radio" id="rd25" name="superficie" value="25">25mq</td>
+            <td><input type="radio" id="rd50" name="superficie" value="50">50mq</td>
+            <td><input type="radio" id="rd75" name="superficie" value="75">75mq</td>
+            <td><input type="radio" id="rd100" name="superficie" value="100">100mq</td></tr>
+
+            <tr><td><label>Hai già dei preventivi?</label></td>
+            <td><input type="radio" id="rdSi" name="preventivi" value="Si">Si</td>
+            <td><input type="radio" id="rdNo" name="preventivi" value="No">No</td></tr>
+        
+            <tr><td><label>CONFERMA</label></td>
+            <td><button id="btnConferma" onclick="btnConferma()">CONFERMA</button></td></tr>
+            <tr><td><label>ANNULLA</label></td>
+            <td><button id="btnAnnulla" onclick="btnAnnulla()">ANNULLA</button></td></tr>
+        </table>
+    </div>
+
+    <div id="About" class="tabcontent">
+        <table id="tbRecensioni">
+            <label>Recensioni:</label>
+            <tr><td>nome: <label>Pippo</label></td></tr>
+            <tr><td>stelle: <label>5/5</label></td></tr>
+            <tr><td>commento: <label>Ottimo servizio</label></td></tr>
+
+            <tr><td><label>Pluto</label></td></tr>
+            <tr><td>stelle: <label>3/5</label></td></tr>
+            <tr><td>commento: <label>Lavori eseguiti in modo troppo superficiale, si poteva fare meglio</label></td></tr>
+        </table>
+
+        <p>
+        <table id="tbChiSiamo">
+            <tr>Azienda pulizie srl, Giussano via Non specificata aperti 24/24h. </tr>
+            <tr>Nel caso di problemi contattaci al numero riportato di seguito: 03621234567 oppure all'indirizzo email: agenziapulizie@gmail.com</tr>
+        </table>
+        </p>
+    </div>
+
+    <div id="Preventivo" class="tabcontent">
+        <label>Preventivo finale:</label><br><br><br>
+        <textarea id="txtPreventivo" rows="75" cols="25">
+        </textarea>
+    </div>
+
+
+</body>
+</html>
